@@ -1,95 +1,51 @@
 import java.util.LinkedList;
-import java.util.NoSuchElementException;
 
-/**
- * Dequeue (Double-ended queue) class with exactly six operations.
- * This class serves as the basic data structure for the pyramid sort algorithm.
- */
 public class Dequeue<T> {
     private LinkedList<T> data;
     
-    /**
-     * Constructor: Creates an empty dequeue
-     */
     public Dequeue() {
-        this.data = new LinkedList<>();
+        data = new LinkedList<>();
     }
     
-    // ==================== THE SIX OPERATIONS ====================
-    
-    /**
-     * Operation 1: Add element at the front
-     */
+    // Operation 1: Add element at the front
     public void addFirst(T element) {
         data.addFirst(element);
     }
     
-    /**
-     * Operation 2: Add element at the rear
-     */
+    // Operation 2: Add element at the rear
     public void addLast(T element) {
         data.addLast(element);
     }
     
-    /**
-     * Operation 3: Remove and return element from the front
-     */
+    // Operation 3: Remove and return element from the front (returns null if empty)
     public T removeFirst() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Dequeue is empty");
-        }
-        return data.removeFirst();
+        return data.pollFirst();
     }
     
-    /**
-     * Operation 4: Remove and return element from the rear
-     */
+    // Operation 4: Remove and return element from the rear (returns null if empty)
     public T removeLast() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Dequeue is empty");
-        }
-        return data.removeLast();
+        return data.pollLast();
     }
     
-    /**
-     * Operation 5: Peek at the front element without removing
-     */
+    // Operation 5: Look at the front element without removing (returns null if empty)
     public T peekFirst() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Dequeue is empty");
-        }
         return data.peekFirst();
     }
     
-    /**
-     * Operation 6: Peek at the rear element without removing
-     */
+    // Operation 6: Look at the rear element without removing (returns null if empty)
     public T peekLast() {
-        if (isEmpty()) {
-            throw new NoSuchElementException("Dequeue is empty");
-        }
         return data.peekLast();
     }
     
-    // ==================== HELPER METHODS ====================
-    
-    /**
-     * Check if dequeue is empty
-     */
+    // helper methods
     public boolean isEmpty() {
         return data.isEmpty();
     }
     
-    /**
-     * Get the size of the dequeue
-     */
     public int size() {
         return data.size();
     }
     
-    /**
-     * String representation for debugging
-     */
     @Override
     public String toString() {
         return data.toString();
