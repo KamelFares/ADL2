@@ -1,5 +1,7 @@
 import java.util.LinkedList;
-
+/**
+ * 
+ * just import the built in LList and add the element by a wrapper class to the Llist- */
 public class Dequeue<T> {
     private LinkedList<T> data;
     

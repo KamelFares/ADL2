@@ -2,33 +2,22 @@
  * PyramidSort - A recursive sorting algorithm using decks
  * 
  * Algorithm Concept:
- * ==================
- * The pyramid sort divides the input into 3 parts (like a pyramid with 3 sections)
+ * The pyramid sort divides the input into 3 parts (like the 3 pyramids of Gizeh with 3 sections)
  * recursively sorts each part, and then merges them back together
  */
 public class PyramidSort {
     
-    private int comparisonCount = 0;  // For statistics
+    private int comparisonCount = 0;
     
-    /**
-     * Main sorting method - sorts integers in ascending order
-     * @param input The dequeue to sort
-     * @return A new sorted dequeue
-     */
     public Dequeue<Integer> sort(Dequeue<Integer> input) {
         comparisonCount = 0;
         System.out.println("Starting PyramidSort on " + input.size() + " elements");
         Dequeue<Integer> result = pyramidSortRecursive(input, 0);
-        System.out.println("Sorting complete. Comparisons: " + comparisonCount);
+        System.out.println("Sorted and the stats are " + comparisonCount);
         return result;
     }
     
-    /**
-     * Recursive pyramid sort implementation
-     * @param input The dequeue to sort
-     * @param depth Recursion depth (for debugging)
-     * @return A new sorted dequeue
-     */
+    
     private Dequeue<Integer> pyramidSortRecursive(Dequeue<Integer> input, int depth) {
         int size = input.size();
         
@@ -47,7 +36,7 @@ public class PyramidSort {
             return sortTwo(input);
         }
         
-        // Recursive case: Divide into 3 parts (pyramid structure)
+        // Recursive case: Divide into 3 parts as the 3 pyramids of Gizeh with 3 sections using the deck as a temp memory
         printIndent(depth);
         System.out.println("Level " + depth + ": Dividing " + size + " elements into 3 parts");
         
@@ -72,8 +61,8 @@ public class PyramidSort {
     }
     
     /**
-     * Divide the input dequeue into three parts
-     * Distribution strategy: Round-robin to balance the three parts
+     * divide the input dequeue into 3 parts
+     * Distribution strategy: Roundrobin to fix the three parts
      */
     private DivisionResult divideIntoThree(Dequeue<Integer> input) {
         Dequeue<Integer> part1 = new Dequeue<Integer>();
@@ -103,7 +92,7 @@ public class PyramidSort {
     }
     
     /**
-     * Sort a dequeue with exactly 2 elements
+     * Sort a dequeue with just 2 elements
      */
     private Dequeue<Integer> sortTwo(Dequeue<Integer> input) {
         Integer first = input.removeFirst();
@@ -125,7 +114,7 @@ public class PyramidSort {
     
     /**
      * Merge three sorted dequeues into one sorted dequeue
-     * This is the key operation - only uses dequeue operations!
+     * This is the key operation only uses dequeue operations
      */
     private Dequeue<Integer> mergeThree(Dequeue<Integer> d1, Dequeue<Integer> d2, Dequeue<Integer> d3) {
         Dequeue<Integer> result = new Dequeue<Integer>();
@@ -159,7 +148,7 @@ public class PyramidSort {
                 if (min != null) comparisonCount++;
             }
             
-            // Remove the minimum from its source and add to result
+            // Remove the min
             switch (minSource) {
                 case 1:
                     result.addLast(d1.removeFirst());

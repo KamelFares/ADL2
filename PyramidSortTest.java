@@ -9,7 +9,7 @@
  *  Small Data Set (6 elements)
  *  Medium Data Set (9 elements)
  *  Already Sorted Data
- *  Reverse Sorted Data (Worst Case, AI helped to get this test case)
+ *  Reverse Sorted Data (Worst Case, AI helped to get this test case but i undersotod it i swear)
  */
 public class PyramidSortTest {
     
@@ -18,11 +18,11 @@ public class PyramidSortTest {
     private int testsTotal = 0;
     
     public PyramidSortTest() {
-        this.sorter = new PyramidSort();
+        sorter = new PyramidSort();
     }
     
-    /**
-     * Run all tests
+    /*
+      tests
      */
     public void runAllTests() {
         System.out.println("PYRAMID SORT TEST SUITE");
@@ -46,7 +46,6 @@ public class PyramidSortTest {
         }
     }
     
-    // ==================== TEST CASES ====================
     
     private void testEmptyDequeue() {
         System.out.println("Test 1: Empty Dequeue");

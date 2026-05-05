@@ -3,10 +3,10 @@
  * 
  * 
  * Algorithm Steps:
- * 1. BASE CASE: If dequeue has 0, 1, or 2 elements, sort directly
- * 2. DIVIDE: Split dequeue into 3 equal (or nearly equal) parts
- * 3. CONQUER: Recursively sort each of the 3 parts
- * 4. COMBINE: Merge the 3 sorted dequeues into one sorted dequeue
+ * 1. base: If dequeue has 0, 1, or 2 elements, sort directly
+ * 2. divide: Split dequeue into 3 equal (or nearly equal) parts
+ * 3. conquer: Recursively sort each of the 3 parts
+ * 4. combine: Merge the 3 sorted dequeues into one sorted dequeue
  * 
  * Key Constraints:
  * ----------------
@@ -17,15 +17,6 @@
  * - Object-oriented design with multiple classes
  * - Uses recursion
  * 
- * Complexity:
- * -----------
- * Implementation Status:
- * ----------------------
- * ✓ Dequeue class with 6 operations
- * ✓ PyramidSort with recursive division into 3 parts
- * ✓ Merge operation for 3 sorted dequeues
- * ✓ Comprehensive test suite
- * ✓ Object-oriented design
  */
 public class Main {
     
@@ -76,7 +67,7 @@ public class Main {
     }
     
     /**
-     * Visualize how the algorithm works with a small example
+     * This visualtization was made by ai just because i wanted to see how the algorithm runs and aslo made on paper
      */
     private static void visualizeAlgorithm() {
         System.out.println("Visual representation of pyramid sort on [8,3,7,1,9,2,5,4,6]:");
@@ -105,7 +96,7 @@ public class Main {
     }
     
     /**
-     * Helper method to print an array
+     * Helper method to print an array to make it look nicer, and it removes the comass at the end of the array
      */
     private static void printArray(int[] arr) {
         System.out.print("[");
